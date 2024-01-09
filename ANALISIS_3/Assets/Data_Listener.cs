@@ -67,9 +67,9 @@ namespace Gamekit3D
             Vector3 pos = dmgScript.gameObject.transform.position;
 
             string damager = " ";
-            var playerComponent = message.damager.GetComponent<PlayerController>();
-            var chomperComponent = message.damager.gameObject.GetComponent<ChomperBehavior>();
-            var spitterComponent = message.damager.gameObject.GetComponent<SpitterBehaviour>();
+            var playerComponent = message.damager.gameObject.GetComponentInParent<PlayerController>();
+            var chomperComponent = message.damager.gameObject.GetComponentInParent<ChomperBehavior>();
+            var spitterComponent = message.damager.gameObject.GetComponent<Spit>();
             if (playerComponent) damager = "Player";
             if (chomperComponent) damager = "Chomper";
             if (spitterComponent) damager = "Spitter";
@@ -95,9 +95,10 @@ namespace Gamekit3D
             Vector3 pos = dmgScript.gameObject.transform.position;
 
             string damager = " ";
-            var playerComponent = message.damager.GetComponent<PlayerController>();
-            var chomperComponent = message.damager.gameObject.GetComponent<ChomperBehavior>();
-            var spitterComponent = message.damager.gameObject.GetComponent<SpitterBehaviour>();
+            var playerComponent = message.damager.gameObject.GetComponentInParent<PlayerController>();
+            var chomperComponent = message.damager.gameObject.GetComponentInParent<ChomperBehavior>();
+            var spitterComponent = message.damager.gameObject.GetComponent<Spit>();
+
             if (playerComponent) damager = "Player";
             if (chomperComponent) damager = "Chomper";
             if (spitterComponent) damager = "Spitter";
@@ -159,7 +160,7 @@ namespace Gamekit3D
             form.AddField("XPos", ((int)position.x).ToString());
             form.AddField("YPos", ((int)position.y).ToString());
             form.AddField("ZPos", ((int)position.z).ToString());
-
+            
             form.AddField("Amount", amount.ToString());
 
             form.AddField("XDmgSource", ((int)damageSource.x).ToString());

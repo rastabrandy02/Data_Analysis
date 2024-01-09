@@ -76,7 +76,7 @@ namespace Gamekit3D
         {
             m_Owner = owner;
         }
-
+        
         public void BeginAttack(bool thowingAttack)
         {
             if (attackAudio != null)
@@ -112,7 +112,7 @@ namespace Gamekit3D
             }
 #endif
         }
-
+        
         private void FixedUpdate()
         {
             if (m_InAttack)

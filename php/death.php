@@ -4,20 +4,21 @@ include_once 'settings.php';
 
 if(true)
 {    
-   $Xpos = $_GET['Xpos']; 
-   $Ypos = $_GET['Ypos'];
-   $Zpos = $_GET['Zpos'];
+   $Xpos = $_POST['XPos']; 
+   $Ypos = $_POST['YPos'];
+   $Zpos = $_POST['ZPos'];
 
-   $Damager=$_GET['Damager'];
+   $Damager=$_POST['Damager'];
+   $Receiver=$_POST['Receiver'];
 
-   $Amount=$_GET['Amount'];
+   $Amount=$_POST['Amount'];
 
-   $XDmgSource=$_GET['XDmgSource'];
-   $YDmgSource=$_GET['YDmgSource'];
-   $ZDmgSource=$_GET['ZDmgSource'];
+   $XDmgSource=$_POST['XDmgSource'];
+   $YDmgSource=$_POST['YDmgSource'];
+   $ZDmgSource=$_POST['ZDmgSource'];
 
-   $sql = "INSERT INTO Death (Xpos,Ypos,Zpos,Damager,Amount,XDmgSource,YDmgSource,ZDmgSource,)
-   VALUES ('$Xpos','$Ypos','$Zpos','$Damager','$Amount','$XDmgSource','$YDmgSource','$ZDmgSource')";
+   $sql = "INSERT INTO `Death` (`Receiver`,`XPos`,`YPos`,`ZPos`,`Amount`,`Damager`,`XDmgSource`,`YDmgSource`,`ZDmgSource`)
+   VALUES ('$Receiver','$Xpos','$Ypos','$Zpos','$Amount','$Damager','$XDmgSource','$YDmgSource','$ZDmgSource')";
      if (mysqli_query($conn, $sql)) {
         echo "New record has been added successfully! ";
 
