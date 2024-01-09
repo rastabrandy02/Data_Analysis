@@ -2,16 +2,22 @@
 
 include_once 'settings.php';
 
-
 if(true)
 {    
-     $posX = $_GET['posX']; 
-     $posY = $_GET['posY'];
-     $posZ = $_GET['posZ'];
-	 
+     $Xpos = $_GET['Xpos']; 
+     $Ypos = $_GET['Ypos'];
+     $Zpos = $_GET['Zpos'];
 
-     $sql = "INSERT INTO Damaged (posX,posY,posZ)
-     VALUES ('$posX' ,'$posY','$posZ')";
+     $Damager=$_GET['Damager'];
+
+     $Amount=$_GET['Amount'];
+
+     $XDmgSource=$_GET['XDmgSource'];
+     $YDmgSource=$_GET['YDmgSource'];
+     $ZDmgSource=$_GET['ZDmgSource'];
+
+     $sql = "INSERT INTO Damaged (Xpos,Ypos,Zpos,Damager,Amount,XDmgSource,YDmgSource,ZDmgSource,)
+     VALUES ('$Xpos','$Ypos','$Zpos','$Damager','$Amount','$XDmgSource','$YDmgSource','$ZDmgSource')";
      if (mysqli_query($conn, $sql)) {
         echo "New record has been added successfully! ";
 
@@ -21,5 +27,6 @@ if(true)
         echo "Error: " . $sql . ":-" . mysqli_error($conn);
      }
      mysqli_close($conn);
+     
 }
 ?>
