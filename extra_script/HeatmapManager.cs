@@ -334,7 +334,7 @@ public class HeatmapManager : MonoBehaviour
 
     IEnumerator GetJumpedData()
     {
-        WWW www = new WWW("https://citmalumnes.upc.es/~oscarta3/importjump.php");
+        WWW www = new WWW("https://citmalumnes.upc.es/~fernandofg2/importjump.php");
 
         yield return www;
         string[] jumpData = www.text.Split("<br>");
@@ -359,7 +359,7 @@ public class HeatmapManager : MonoBehaviour
 
     IEnumerator GetPositionData()
     {
-        WWW www = new WWW("https://citmalumnes.upc.es/~oscarta3/importposition.php");
+        WWW www = new WWW("https://citmalumnes.upc.es/~fernandofg23/importposition.php");
 
         yield return www;
         string[] PositionData = www.text.Split("<br>");
@@ -384,7 +384,7 @@ public class HeatmapManager : MonoBehaviour
 
     IEnumerator GetDamagedData()
     {
-        WWW www = new WWW("https://citmalumnes.upc.es/~oscarta3/importdamaged.php");
+        WWW www = new WWW("https://citmalumnes.upc.es/~fernandofg2/importdamaged.php");
 
         yield return www;
         string[] damagedData = www.text.Split("<br>");
@@ -409,7 +409,7 @@ public class HeatmapManager : MonoBehaviour
 
     IEnumerator GetDeathData()
     {
-        WWW www = new WWW("https://citmalumnes.upc.es/~oscarta3/importdeath.php");
+        WWW www = new WWW("https://citmalumnes.upc.es/~fernandofg2/importdeath.php");
 
         yield return www;
         string[] deathData = www.text.Split("<br>");
@@ -434,7 +434,7 @@ public class HeatmapManager : MonoBehaviour
 
     IEnumerator GetEnemiesKilledData()
     {
-        WWW www = new WWW("https://citmalumnes.upc.es/~oscarta3/importenemy.php");
+        WWW www = new WWW("https://citmalumnes.upc.es/~fernandofg23/importenemy.php");
 
         yield return www;
         string[] enemiesKilledData = www.text.Split("<br>");
@@ -459,7 +459,7 @@ public class HeatmapManager : MonoBehaviour
 
     IEnumerator GetPathData()
     {
-        WWW www = new WWW("https://citmalumnes.upc.es/~oscarta3/importpath.php");
+        WWW www = new WWW("https://citmalumnes.upc.es/~fernandofg2/importpath.php");
 
         yield return www;
         string[] pathData = www.text.Split("<br>");
