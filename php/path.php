@@ -2,16 +2,14 @@
 
 include_once 'settings.php';
 
-
 if(true)
 {    
-     $posX = $_GET['posX']; 
-     $posY = $_GET['posY'];
-     $posZ = $_GET['posZ'];
+     $Xpos = $_GET['Xpos']; 
+     $Ypos = $_GET['Ypos'];
+     $Zpos = $_GET['Zpos'];
 	 
-
-     $sql = "INSERT INTO Paths (posX,posY,posZ)
-     VALUES ('$posX' ,'$posY','$posZ')";
+     $sql = "INSERT INTO Paths (Xpos,Ypos,Zpos)
+     VALUES ('$Xpos' ,'$Ypos','$Zpos')";
      if (mysqli_query($conn, $sql)) {
         echo "New record has been added successfully! ";
 
