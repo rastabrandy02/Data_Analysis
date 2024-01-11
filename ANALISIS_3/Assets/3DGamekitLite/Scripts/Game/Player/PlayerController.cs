@@ -2,6 +2,7 @@ using UnityEngine;
 using Gamekit3D.Message;
 using System.Collections;
 using UnityEngine.XR.WSA;
+using System.Collections.Generic;
 
 namespace Gamekit3D
 {
@@ -31,6 +32,11 @@ namespace Gamekit3D
         public RandomAudioPlayer emoteDeathPlayer;
         public RandomAudioPlayer emoteAttackPlayer;
         public RandomAudioPlayer emoteJumpPlayer;
+
+        public List<MonoBehaviour> onMovementMessageReceivers;
+
+        float messageTimer = 0.0f;
+        float timeBetweenMessages = 1.0f;
 
         protected AnimatorStateInfo m_CurrentStateInfo;    // Information about the base layer of the animator cached.
         protected AnimatorStateInfo m_NextStateInfo;
@@ -268,6 +274,25 @@ namespace Gamekit3D
 
             // Set the animator parameter to control what animation is being played.
             m_Animator.SetFloat(m_HashForwardSpeed, m_ForwardSpeed);
+
+
+
+            messageTimer += Time.deltaTime;
+            if(messageTimer >= timeBetweenMessages)
+            {
+                messageTimer = 0;
+
+                object data = null;
+
+                for (var i = 0; i < onMovementMessageReceivers.Count; ++i)
+                {
+                    var receiver = onMovementMessageReceivers[i] as IMessageReceiver;
+
+                    receiver.OnReceiveMessage(MessageType.POSITION, this, data);
+                }
+            }
+            
+            
         }
 
         // Called each physics step.
@@ -289,6 +314,15 @@ namespace Gamekit3D
                     m_VerticalSpeed = jumpSpeed;
                     m_IsGrounded = false;
                     m_ReadyToJump = false;
+
+                    object data = null;
+
+                    for (var i = 0; i < onMovementMessageReceivers.Count; ++i)
+                    {
+                        var receiver = onMovementMessageReceivers[i] as IMessageReceiver;
+
+                        receiver.OnReceiveMessage(MessageType.JUMP, this, data);
+                    }
                 }
             }
             else

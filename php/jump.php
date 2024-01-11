@@ -4,11 +4,11 @@ include_once 'settings.php';
 
 if(true)
 {    
-     $Xpos = $_GET['Xpos']; 
-     $Ypos = $_GET['Ypos'];
-     $Zpos = $_GET['Zpos'];
+     $Xpos = $_POST['XPos']; 
+     $Ypos = $_POST['YPos'];
+     $Zpos = $_POST['ZPos'];
 
-     $sql = "INSERT INTO Jumped (posX,Ypos,Zpos)
+     $sql = "INSERT INTO Jump (XPos,YPos,ZPos)
      VALUES ('$Xpos' ,'$Ypos','$Zpos')";
      if (mysqli_query($conn, $sql)) {
         echo "New record has been added successfully! ";
