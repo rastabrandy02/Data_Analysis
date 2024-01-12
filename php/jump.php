@@ -14,7 +14,7 @@ if(true)
         echo "New record has been added successfully! ";
 
         $last_id = $conn->insert_id;
-        echo "New Jumped record created successfully.";
+        echo "New Jump record created successfully.";
      } else {
         echo "Error: " . $sql . ":-" . mysqli_error($conn);
      }

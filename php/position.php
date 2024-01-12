@@ -14,7 +14,7 @@ if(true)
         echo "New record has been added successfully! ";
 
         $last_id = $conn->insert_id;
-        echo "New position record created successfully.";
+        echo "New Position record created successfully.";
      } else {
         echo "Error: " . $sql . ":-" . mysqli_error($conn);
      }
