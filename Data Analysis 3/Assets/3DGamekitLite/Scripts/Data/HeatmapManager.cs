@@ -453,9 +453,9 @@ public class HeatmapManager : MonoBehaviour
         for (int i = 2; i < (deathData.Length - 1); i++)
         {
             string[] parts = deathData[i].Split(" ");
-            int x = int.Parse(parts[1]);
-            int y = int.Parse(parts[2]);
-            int z = int.Parse(parts[3]);
+            int x = int.Parse(parts[0]);
+            int y = int.Parse(parts[1]);
+            int z = int.Parse(parts[2]);
 
             Vector3Int vector = new Vector3Int(x, y, z);
             deathDataInt[i - 2] = vector;
