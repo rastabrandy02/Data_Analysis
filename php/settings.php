@@ -1,8 +1,8 @@
 <?php
     $servername = "localhost:3306";
-    $username = "sofial";
-    $password = "bQVHqZ7v9wjQ";
-    $database = "sofial";
+    $username = "ogylandyy";
+    $password = "H57nt8Z4Kusc";
+    $database = "ogylandyy";
     $conn=mysqli_connect($servername,$username,$password,"$database");
       if(!$conn){
           die('Could not Connect MySql Server:' .mysql_error());
